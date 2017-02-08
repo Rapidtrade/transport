@@ -1,0 +1,9 @@
+[Unit]  
+Description=Job to start Transport API  
+[Service]  
+Environment=statedir=/var/transport  
+ExecStartPre=/bin/mkdir -p ${statedir}  
+ExecStart=/opt/transport/transport 
+Restart=on-abort
+[Install]  
+WantedBy=multi-user.target 
